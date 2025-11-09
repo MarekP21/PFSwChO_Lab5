@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: no-test
+  name: no-test
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: no-test
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: no-test
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources:
+          requests:
+            cpu: 300m
+            memory: 512Mi
+          limits:
+            cpu: 300m
+            memory: 512Mi
+status: {}
